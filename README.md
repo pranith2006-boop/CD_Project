@@ -1,4 +1,4 @@
-# Compiler Phases Demonstration Tool
+# LexiParse Studio
 
 An educational web application that visualizes each stage of a compiler pipeline.
 
