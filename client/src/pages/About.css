@@ -1,0 +1,26 @@
+.about {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.about h1 {
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.about p {
+  margin-bottom: 1.25rem;
+  font-size: 1rem;
+}
+
+.about strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}

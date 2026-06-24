@@ -1,0 +1,313 @@
+.compiler-page {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1350px;
+  margin: 0 auto;
+  min-height: calc(100vh - var(--navbar-height) - 4rem);
+  align-items: stretch;
+}
+
+.editor-panel, .phases-panel {
+  flex: 1;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.editor-panel h2, .phases-panel h2 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.75rem;
+}
+
+.editor-container {
+  flex-grow: 1;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+/* Customize codemirror wrapper height */
+.cm-theme-light, .cm-editor {
+  height: 450px !important;
+}
+
+.editor-controls {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.editor-controls button {
+  padding: 0.6rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+
+.btn-run {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-run:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-clear {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+
+.btn-clear:hover {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+/* Phase tabs styling */
+.phase-tabs {
+  display: flex;
+  list-style: none;
+  gap: 0.25rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1rem;
+  padding-bottom: 0px;
+  overflow-x: auto;
+}
+
+.phase-tabs li {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  border: 1px solid transparent;
+  border-bottom: none;
+}
+
+.phase-tabs li:hover {
+  color: var(--primary);
+  background: var(--primary-light);
+}
+
+.phase-tabs li.active {
+  color: var(--primary);
+  font-weight: 600;
+  border-color: var(--border);
+  background: var(--bg-card);
+  margin-bottom: -1px;
+  border-bottom: 1px solid var(--bg-card);
+}
+
+/* Phase visualization contents */
+.phase-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+  position: relative;
+}
+
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  text-align: center;
+  padding: 2rem;
+  flex-grow: 1;
+}
+
+.placeholder-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+/* Table styles for Lexical & Semantic */
+.data-table-wrapper {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  max-height: 430px;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.875rem;
+}
+
+.data-table th {
+  background: #f8fafc;
+  color: var(--text-primary);
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.data-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+.data-table tr:last-child td {
+  border-bottom: none;
+}
+
+.token-badge {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 4px;
+}
+
+.badge-keyword { background: #fee2e2; color: #991b1b; }
+.badge-identifier { background: #e0f2fe; color: #075985; }
+.badge-literal { background: #fef9c3; color: #854d0e; }
+.badge-operator { background: #f3e8ff; color: #6b21a8; }
+.badge-symbol { background: #f1f5f9; color: #475569; }
+
+/* Tree/AST display for parser */
+.tree-node {
+  margin-left: 1.5rem;
+  padding-left: 0.5rem;
+  border-left: 1px dashed var(--border);
+}
+
+.tree-node-title {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin: 0.4rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tree-node-tag {
+  background: var(--primary-light);
+  color: var(--primary);
+  font-size: 0.75rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+}
+
+/* Code block styles */
+.code-output {
+  background: #0f172a;
+  color: #f8fafc;
+  padding: 1.25rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  overflow: auto;
+  max-height: 430px;
+  flex-grow: 1;
+}
+
+.code-line {
+  display: block;
+}
+
+/* Optimization side-by-side */
+.comparison-container {
+  display: flex;
+  gap: 1rem;
+  height: 430px;
+}
+
+.comparison-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.comparison-box h4 {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Semantic checks styling */
+.semantic-status {
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.semantic-status.success {
+  background: #f0fdf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.semantic-status.error {
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+/* Loader styling */
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--border);
+  border-top: 3px solid var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 1024px) {
+  .compiler-page {
+    flex-direction: column;
+  }
+}
