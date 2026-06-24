@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <section className="home page">
       <div className="hero">
-        <h1>Compiler Phases Demonstration Tool</h1>
+        <h1>LexiParse Studio</h1>
         <p>An interactive, educational platform designed to visualize and inspect every stage of compilation for a simple, C‑like language.</p>
         <div className="buttons">
           <a href="/compiler" className="btn btn-primary">Launch Compiler Studio</a>

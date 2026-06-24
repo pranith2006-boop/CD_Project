@@ -4,7 +4,7 @@ import './NavBar.css';
 const NavBar = () => {
   return (
     <nav className="navbar">
-      <div className="navbar__logo">Compiler Phases Demonstration Tool</div>
+      <div className="navbar__logo">LexiParse Studio</div>
       <ul className="navbar__links">
         <li><Link to="/">Home</Link></li>
         <li><Link to="/compiler">Compiler</Link></li>
