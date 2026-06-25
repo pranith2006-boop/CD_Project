@@ -12,7 +12,7 @@ const phases = [
   'Target Code',
 ];
 
-const API_BASE = import.meta.env.DEV ? 'http://localhost:5000' : '';
+const API_BASE = import.meta.env.DEV ? 'http://localhost:5000' : (import.meta.env.VITE_API_BASE || '');
 
 const Compiler = () => {
   const [code, setCode] = useState(`int main() {\n    int a = 10;\n    int b = 20;\n    int c = a + b;\n    return c;\n}`);
